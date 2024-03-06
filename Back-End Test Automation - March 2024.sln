@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. API Testing with C#", "4. API Testing with C#", "{F0E7EF87-09F8-4282-9F08-62611F852E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APITestingWithC#", "APITestingWithC#\APITestingWithC#.csproj", "{39344B41-D605-49DE-8620-6431F59DD227}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39344B41-D605-49DE-8620-6431F59DD227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39344B41-D605-49DE-8620-6431F59DD227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39344B41-D605-49DE-8620-6431F59DD227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39344B41-D605-49DE-8620-6431F59DD227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{39344B41-D605-49DE-8620-6431F59DD227} = {F0E7EF87-09F8-4282-9F08-62611F852E16}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5EF5C4C-2ED3-4B4B-A842-EAD1502E7F28}
+	EndGlobalSection
+EndGlobal
