@@ -1,28 +1,17 @@
 ﻿using APITestingWithC_;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
-WetherForecast wetherForecast = new WetherForecast()
-{
-    Date = DateTime.Now,
-    TemperatureC = 32,
-    Suumary = "New Random Test Summary"
-};
+// Call the method to generate a WeatherForecast object
+WeatherForecast weatherForecast = SerializeDeserializeJSON.CreateRandomWeatherForecast();
 
-// Serialize
+// Print the WeatherForecast object as JSON using System.Text.JSON
+SerializeDeserializeJSON.PrintWeatherForecastJson(weatherForecast);
 
-string wetherForecastJson = JsonSerializer.Serialize(wetherForecast);
+// Combine the file path for the JSON file
+string filePath = Path.Combine(Environment.CurrentDirectory, "../../../WeatherForecast.json");
 
-Console.WriteLine(wetherForecastJson);
+// Deserialize the weather forecasts from the JSON file and print them using System.Text.JSON
+List<WeatherForecast> weatherForecasts = SerializeDeserializeJSON.WeatherForecastProcessor.DeserializeAndPrintWeatherForecasts(filePath);
 
 
-// Deserialize
-
-string jsonString = File.ReadAllText(Path.Combine(Environment.CurrentDirectory + "/../../../WetherForecast.json"));
-
-var weatherForecastsObject = JsonSerializer.Deserialize<List<WetherForecast>>(jsonString);
-
-foreach (var weatherForecast in weatherForecastsObject)
-{
-    Console.WriteLine($"Date: {weatherForecast.Date}, Temperature: {weatherForecast.TemperatureC}, Summary: {weatherForecast.Suumary}");
-}
+// Print the WeatherForecast object as JSON using JSON.Net
+SerializeDeserializeJSONNet.SerializeDeSerializeJSONNet(weatherForecast);

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace APITestingWithC_
 {
-    internal class WetherForecast
+    public class WeatherForecast
     {
         public DateTime Date { get; set; }
         public int TemperatureC { get; set; }
-        public string Suumary { get; set; }
+        public string Summary { get; set; }
     }
 }
