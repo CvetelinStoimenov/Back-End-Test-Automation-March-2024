@@ -24,7 +24,7 @@ SerializeDeserializeJSONNet.SerializeDeSerializeJSONNet(weatherForecast);
 // Deserialize the weather forecasts from the JSON file and print them using JSON.Net
 List<WeatherForecast> weatherForecastsJSONNet = SerializeDeserializeJSONNet.WeatherForecastProcessorJSONNet.DeserializeAndPrintWeatherForecastsJSONNet(filePathWeather);
 
-var person = SerializeDeserializeJSONNet.DeSerializeAndPrintAnonymousTypeJSONNet(filePathPeople);
+// var person = SerializeDeserializeJSONNet.DeSerializeAndPrintAnonymousTypeJSONNet(filePathPeople);
 
 var client = new RestClient("https://api.github.com");
 var request = new RestRequest("/repos/{user}/{repo}/issues/{id}", Method.Get);
@@ -47,7 +47,7 @@ foreach (var repo in repos)
 }
 
 
-var client = new RestClient(new RestClientOptions("https://api.github.com")
+var clientAut = new RestClient(new RestClientOptions("https://api.github.com")
 {
     Authenticator = new HttpBasicAuthenticator("CvetelinStoimenov", "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")
 });
@@ -55,5 +55,5 @@ var client = new RestClient(new RestClientOptions("https://api.github.com")
 var requestPost = new RestRequest("/repos/testnakov/test-nakov-repo/issues", Method.Post);
 requestPost.AddHeader("Content-Type", "application/json");
 requestPost.AddJsonBody(new { title = "Test Stoimenov", body = "This text is posted from C# using ResSharp!" });
-var responsePost = client.Execute(requestPost);
+var responsePost = clientAut.Execute(requestPost);
 Console.WriteLine(responsePost.StatusCode);
