@@ -13,36 +13,64 @@ namespace RestSharpServices
     {
         private RestClient client;
 
+
         public GitHubApiClient(string baseUrl, string username, string token)
         {
-            throw new NotImplementedException();
+            var options = new RestClientOptions(baseUrl) 
+            {
+                Authenticator = new HttpBasicAuthenticator(username, token)
+            };
+            this.client = new RestClient(options);
         }
 
-        public List<Issue>  GetAllIssues(string repo)
+        public List<Issue> ? GetAllIssues(string repo)
         {
-            throw new NotImplementedException();
+            var request = new RestRequest($"{repo}/issues");
+            var response = client.Execute(request);
+
+            return response.Content != null 
+                ? JsonSerializer.Deserialize<List<Issue>>(response.Content) 
+                : null;
         }
 
-        public Issue  GetIssueByNumber(string repo, int issueNumber)
+        public Issue ? GetIssueByNumber(string repo, int issueNumber)
         {
-            throw new NotImplementedException();
+            var request = new RestRequest($"{repo}/issues/{issueNumber}");
+            var response = client.Execute(request, Method.Get);
 
+            return response.Content != null 
+                ? JsonSerializer.Deserialize<Issue>(response.Content) 
+                : null;
         }
 
-        public Issue  CreateIssue(string repo, string title, string body)
+        public Issue ? CreateIssue(string repo, string title, string body)
         {
-            throw new NotImplementedException();
+            var request = new RestRequest($"{repo}/issues");
+            request.AddJsonBody(new { title, body });
+            var response = client.Execute(request, Method.Post);
+            return response.Content != null 
+                ? JsonSerializer.Deserialize<Issue>(response.Content) 
+                : null;
         }
 
-        public List<Label>  GetAllLabelsForIssue(string repo, int issueNumber)
+        public List<Label> ? GetAllLabelsForIssue(string repo, int issueNumber)
         {
-            throw new NotImplementedException();
+            var request = new RestRequest($"{repo}/issues/{issueNumber}/labels");
+            var response = client.Execute(request, Method.Get);
 
+            return response.Content != null 
+                ? JsonSerializer.Deserialize<List<Label>>(response.Content) 
+                : null;
         }
 
-        public List<Comment>  GetAllCommentsForIssue(string repo, int issueNumber)
+        public List<Comment> ? GetAllCommentsForIssue(string repo, int issueNumber)
         {
-            throw new NotImplementedException();
+            var request = new RestRequest($"{repo}/issues/{issueNumber}/comments");
+            var response = client.Execute(request);
+
+            return response.Content != null
+                ? JsonSerializer.Deserialize<List<Comment>>(response.Content)
+                : null;
         }
 
         public Comment CreateCommentOnGitHubIssue(string repo, int issueNumber, string body)

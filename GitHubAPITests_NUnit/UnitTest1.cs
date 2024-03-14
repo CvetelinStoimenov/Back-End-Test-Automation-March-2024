@@ -85,7 +85,7 @@ namespace GitHubAPITests_NUnit
         [TestCase("CA", "M5S", "Toronto")]
         [TestCase("GB", "B1", "Birmingham")]
         [TestCase("DE", "01067", "Dresden")]
-        public void TestZippopotamus(string countryCode, string zipCode, string expectedPlace)
+        public void TestHippopotamus(string countryCode, string zipCode, string expectedPlace)
         {
             // Arrange
             var restClient = new RestClient("https://api.zippopotam.us");
@@ -93,7 +93,7 @@ namespace GitHubAPITests_NUnit
 
             // Act
             var httpResponse = restClient.Execute(httpRequest);
-            var location = new JsonDeserialize().Deserialize<Location>(httpResponse);
+            var location = JsonSerializer.Deserialize<Location>(httpResponse.Content);
 
             // Assert   
             StringAssert.Contains(expectedPlace, location.Place[0].PlaceName);
