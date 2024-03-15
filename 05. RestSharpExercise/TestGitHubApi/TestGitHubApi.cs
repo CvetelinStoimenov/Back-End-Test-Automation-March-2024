@@ -130,29 +130,67 @@ namespace TestGitHubApi
         [Test, Order (6)]
         public void Test_CreateCommentOnGitHubIssue()
         {
-           
+            // Arrange
+            string repo = "test-nakov-repo";
+            int issueNumber = 6704;
+            string expectedBody = "Let me see";
 
-         }
+            // Act
+            var comment = client.CreateCommentOnGitHubIssue(repo, issueNumber, expectedBody);
+
+            // Assert
+            Assert.That(comment.Body, Is.EqualTo (expectedBody));
+            Console.WriteLine(comment.Id);
+            lastCreatedCommentId = comment.Id;
+
+        }
 
         [Test, Order (7)]
         public void Test_GetCommentById()
         {
-            
+            // Arrange
+            string repo = "test-nakov-repo";
+            int commentId = 762539678;
+
+            // Act
+            Comment comment = client.GetCommentById(repo, commentId);
+
+            // Assert
+            Assert.IsNotNull(comment, "Expected to retrieve a comment, but got null.");
+            Assert.That(comment.Id, Is.EqualTo(commentId), "The retrieved comment ID should match the requested comment ID.");
         }
 
 
         [Test, Order (8)]
         public void Test_EditCommentOnGitHubIssue()
         {
-           
+            // Arrange
+            string repo = "test-nakov-repo";
+            int commentId = lastCreatedCommentId;
+            string newBody = "This is the updated text of the comment";
+
+            // Act
+            var updateComment = client.EditCommentOnGitHubIssue(repo, commentId, newBody);
+
+            // Assert
+            Assert.IsNotNull(updateComment, "The updated comment should not be null.");
+            Assert.That(updateComment.Id, Is.EqualTo(commentId), "The updated comment ID should match the original comment ID.");
+            Assert.That(updateComment.Body, Is.EqualTo(newBody), "The updated comment text should match the new body text.");
         }
 
         [Test, Order (9)]
         public void Test_DeleteCommentOnGitHubIssue()
         {
-           
-        }
+            // Arrange
+            string repo = "test-nakov-repo";
+            int commentId = lastCreatedCommentId;
 
+            // Act
+            bool result = client.DeleteCommentOnGitHubIssue (repo, commentId);
+
+            // Assert
+            Assert.IsTrue(result, "The comment should be successfully deleted.");
+        }
 
     }
 }

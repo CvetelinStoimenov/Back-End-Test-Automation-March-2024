@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.ComponentModel.Design;
+using System.Net;
 using System.Text.Json;
 using RestSharp;
 using RestSharp.Authenticators;
@@ -73,24 +74,44 @@ namespace RestSharpServices
                 : null;
         }
 
-        public Comment CreateCommentOnGitHubIssue(string repo, int issueNumber, string body)
+        public Comment ? CreateCommentOnGitHubIssue(string repo, int issueNumber, string body)
         {
-            throw new NotImplementedException();
+            var request = new RestRequest($"{repo}/issues/{issueNumber}/comments");
+            request.AddJsonBody(new { body });
+            var response = client.Execute(request, Method.Post);
+
+            return response.Content != null
+                ? JsonSerializer.Deserialize<Comment>(response.Content) 
+                : null;
         }
 
-        public Comment  GetCommentById (string repo, int commentId)
+        public Comment ? GetCommentById (string repo, int commentId)
         {
-            throw new NotImplementedException();
+            var request = new RestRequest($"{repo}/issues/comments/{commentId}");
+            var response = client.Execute(request, Method.Get);
+
+            return response.Content != null
+                ? JsonSerializer.Deserialize<Comment>(response.Content)
+                : null;
         }
 
-        public Comment  EditCommentOnGitHubIssue( string repo, int commentId, string newBody)
+        public Comment ? EditCommentOnGitHubIssue( string repo, int commentId, string newBody)
         {
-            throw new NotImplementedException();
+            var request = new RestRequest($"{repo}/issues/comments/{commentId}");
+            request.AddJsonBody(new { body = newBody });
+            var response = client.Execute(request, Method.Patch);
+
+            return response.IsSuccessful && response.Content != null
+                ? JsonSerializer.Deserialize<Comment>(response.Content)
+                : null;
         }
 
         public bool DeleteCommentOnGitHubIssue(string repo, int commentId)
         {
-            throw new NotImplementedException();
+            var request = new RestRequest($"{repo}/issues/comments/{commentId}");
+            var response = client.Execute(request, Method.Delete);
+
+            return response.IsSuccessful;
         }
 
     }
