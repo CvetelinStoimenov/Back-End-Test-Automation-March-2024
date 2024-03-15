@@ -80,7 +80,7 @@ namespace GitHubAPITests_NUnit
         }
 
 
-        [TestCase("BG", "1000", "Sofia")]
+        [TestCase("BG", "1000", "Sofija")]
         [TestCase("BG", "5000", "Veliko Turnovo")]
         [TestCase("CA", "M5S", "Toronto")]
         [TestCase("GB", "B1", "Birmingham")]
@@ -89,14 +89,15 @@ namespace GitHubAPITests_NUnit
         {
             // Arrange
             var restClient = new RestClient("https://api.zippopotam.us");
-            var httpRequest = new RestRequest(countryCode + "/" +  zipCode);
+            var httpRequest = new RestRequest($"{countryCode}/{zipCode}");
 
             // Act
             var httpResponse = restClient.Execute(httpRequest);
-            var location = JsonSerializer.Deserialize<Location>(httpResponse.Content);
+            var jsonResponse = httpResponse.Content;
+            var location = JsonSerializer.Deserialize<Location>(jsonResponse);
 
             // Assert   
-            StringAssert.Contains(expectedPlace, location.Place[0].PlaceName);
+            StringAssert.Contains(expectedPlace, location.places[0].placeName);
         }
     }
 }
