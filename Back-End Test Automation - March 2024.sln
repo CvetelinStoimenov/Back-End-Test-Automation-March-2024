@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. API Testing with C#", "04. API Testing with C#", "{F0E7EF87-09F8-4282-9F08-62611F852E16}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APITestingWithC#", "APITestingWithC#\APITestingWithC#.csproj", "{39344B41-D605-49DE-8620-6431F59DD227}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APITestingWithC#", "04. API Testing with C#\APITestingWithC#\APITestingWithC#.csproj", "{39344B41-D605-49DE-8620-6431F59DD227}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. RestSharpExercise", "05. RestSharpExercise", "{C2DD0E5A-F6D4-4593-AFD7-0A3251B04433}"
 EndProject
@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestGitHubApi", "05. RestSh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestSharpServices", "05. RestSharpExercise\RestSharpServices\RestSharpServices.csproj", "{86963F0E-A41C-4C1B-9841-EB3B3E8A7DD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APITestsNUnitRestSharp", "APITestsNUnitRestSharp\APITestsNUnitRestSharp.csproj", "{8E1D8ECC-E040-4F43-8754-B1BC4D03A8F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APITestsNUnitRestSharp", "04. API Testing with C#\APITestsNUnitRestSharp\APITestsNUnitRestSharp.csproj", "{8E1D8ECC-E040-4F43-8754-B1BC4D03A8F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubAPITests_NUnit", "GitHubAPITests_NUnit\GitHubAPITests_NUnit.csproj", "{CAB68D29-0C83-457F-A6AB-9A6D687A5C76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitHubAPITests_NUnit", "04. API Testing with C#\GitHubAPITests_NUnit\GitHubAPITests_NUnit.csproj", "{CAB68D29-0C83-457F-A6AB-9A6D687A5C76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Exercise Integration Testing of Web API Controllers", "06. Exercise Integration Testing of Web API Controllers", "{F8BA5711-5CAB-4032-8DF5-E11E428387E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
