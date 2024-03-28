@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "b4b4d651-a111-45e5-99d6-a114cead7c0f",
+		"name": "07. API Testing with Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28723811"
+	},
+	"item": [
+		{
+			"name": "PetStore",
+			"item": [
+				{
+					"name": "PetStoreGetAllPET",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json();\r",
+									"const bodyAsText = pm.response.text();\r",
+									"\r",
+									"\r",
+									"pm.test('Status code is 200'), () =>{\r",
+									"pm.response.to.have.status(200);\r",
+									"}\r",
+									"\r",
+									"pm.test('Response has the pet keyword'), () =>{\r",
+									"\r",
+									"pm.expect(bodyAsText.toLocaleLowerCase()).to.be.contains('pet');\r",
+									"}\r",
+									"\r",
+									"pm.test('Response has the pet keyword 2 with if/else'), () =>{\r",
+									"\r",
+									"if (bodyAsText.toLocaleLowerCase().includes('pet')){\r",
+									"    console.log('Body has the pet keyword')\r",
+									"} else {\r",
+									"    console.log('Body dos not have pet keyword')\r",
+									"}\r",
+									"}\r",
+									"\r",
+									"pm.test('Get all pets returs 5 pets'), () =>{\r",
+									"\r",
+									"pm.expect(body.length).to.equals(5);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/pet/findByStatus?status=pending",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"pet",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "pending"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test('Status code is 200', () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('Response containes id and photoUrls', () => {\r",
+									"    pm.expect(jsonData).to.have.property('id').that.is.a('number');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 10,\r\n  \"name\": \"doggie\",\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Dogs\"\r\n  },\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/pet/",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"pet",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EventMi",
+			"item": [
+				{
+					"name": "Happy paths",
+					"item": [
+						{
+							"name": "Get All Events View",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/Event/All",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"Event",
+										"All"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Add Event View",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/Event/Add",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"Event",
+										"Add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Event",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "Name",
+											"value": "Test Event Name",
+											"type": "text"
+										},
+										{
+											"key": "Place",
+											"value": "Test Place Name",
+											"type": "text"
+										},
+										{
+											"key": "Start",
+											"value": "02/05/2024 09:00",
+											"type": "text"
+										},
+										{
+											"key": "End",
+											"value": "02/05/2024 12:00",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/Event/Add",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"Event",
+										"Add"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									"pm.test('Should return an OK response.', () => {\r",
+									"    pm.response.to.have.status(200)\r",
+									"});"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Get Detailed View Should Return Not Found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Should return not found.', () => {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Event/Details/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Event",
+								"Details",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GitHub",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log('Before request')"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log('After request')\r",
+									"console.log(pm.variables.get('GitHubBaseURL'))\r",
+									"console.log(pm.response)\r",
+									"console.log(pm.response.text())\r",
+									"console.log(pm.response.json())"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GitHubBaseURL}}/users/softuni/repos",
+							"host": [
+								"{{GitHubBaseURL}}"
+							],
+							"path": [
+								"users",
+								"softuni",
+								"repos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create GitHub Issue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test('Check status code should be 201 Created', () => {\r",
+									"    pm.response.to.have.status(201);\r",
+									"})\r",
+									"\r",
+									"pm.test('Response should have \"id\" and \"number\" as integers', () => {\r",
+									"    pm.expect(jsonData).to.have.property('id').that.is.a('number');\r",
+									"    pm.expect(jsonData).to.have.property('number').that.is.a('number');\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Posted issue data is the same as returned issue data\", () => {\r",
+									"    var actualIssueTitle = jsonData.title;\r",
+									"    pm.expect(actualIssueTitle).to.eql('Found a new bug');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.github+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Found a new bug\",\r\n    \"body\":\"I'm having a problem with this.\",\r\n    \"labels\": [\r\n        \"bug\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GitHubBaseURL}}/repos/testnakov/test-nakov-repo/issues",
+							"host": [
+								"{{GitHubBaseURL}}"
+							],
+							"path": [
+								"repos",
+								"testnakov",
+								"test-nakov-repo",
+								"issues"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
