@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="08. Exercise API Testing with Postman- Trello API" tests="11" time="4.894">
+  <testsuite name="Get All Boards" id="e965c11d-a61a-4553-ba94-81dba8762a5f" timestamp="2024-03-28T11:08:53.109Z" tests="3" failures="0" errors="0" time="0.356">
+    <testcase name="Response code should be OK." time="0.356" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Response time is less than 30 seconds." time="0.356" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Response body is not empty." time="0.356" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Create a Board" id="2f13aecf-226c-40f1-accf-db54e414a9fb" timestamp="2024-03-28T11:08:53.109Z" tests="2" failures="0" errors="0" time="0.440">
+    <testcase name="Response code should be OK." time="0.440" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Board name is &quot;Learning Postman&quot;." time="0.440" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Get Single Board" id="14a4b69e-915c-4c18-a61c-3f84e7e4a903" timestamp="2024-03-28T11:08:53.109Z" tests="3" failures="0" errors="0" time="0.199">
+    <testcase name="Response code should be OK." time="0.199" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Posted issue data is the same as returned issue data." time="0.199" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Response body has property &quot;name&quot; of type string equal to &quot;Learning Postman&quot;." time="0.199" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Create TO DO list" id="b456ffab-3dff-4a28-8716-954050c0207c" timestamp="2024-03-28T11:08:53.109Z" tests="4" failures="0" errors="0" time="0.342">
+    <testcase name="Response code should be OK." time="0.342" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Response has all the expected properties." time="0.342" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="&quot;closed&quot; is false and of type boolean." time="0.342" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="&quot;idBoard&quot; matches expected board ID." time="0.342" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Create Unique Named List" id="1d7b086c-41b1-403e-a4d5-865019039c76" timestamp="2024-03-28T11:08:53.109Z" tests="2" failures="0" errors="0" time="0.248">
+    <testcase name="Response code should be OK." time="0.248" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="List name matches the unique name used in creation." time="0.248" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Get All Lists from a Board" id="50557602-9914-42df-b43c-4470c71648bb" timestamp="2024-03-28T11:08:53.109Z" tests="3" failures="0" errors="0" time="0.214">
+    <testcase name="Response code should be OK." time="0.214" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Response array is not empty." time="0.214" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Response is an array." time="0.214" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Create Card in TO DO List" id="0bfaa07e-16f3-4346-aa99-455eb5cb39f9" timestamp="2024-03-28T11:08:53.109Z" tests="3" failures="0" errors="0" time="0.514">
+    <testcase name="Response code should be OK." time="0.514" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Card name is correct." time="0.514" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Labels and attachments are empty." time="0.514" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Move Card to List With Unique Name" id="28bd365c-9a0f-4876-8941-46c80676589c" timestamp="2024-03-28T11:08:53.109Z" tests="3" failures="0" errors="0" time="0.325">
+    <testcase name="Response code should be OK." time="0.325" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Card ID is correct." time="0.325" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Card is moved to the new list." time="0.325" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Delete Card" id="b438dd16-8e7e-427a-8b0b-262cece2a24c" timestamp="2024-03-28T11:08:53.109Z" tests="3" failures="0" errors="0" time="0.636">
+    <testcase name="Response code should be OK." time="0.636" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="&quot;limits&quot; property exists and is an object." time="0.636" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="&quot;limits&quot; object is empty." time="0.636" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Delete Board" id="48d70b23-1bc1-4267-8fe0-4e5a1a8079fa" timestamp="2024-03-28T11:08:53.109Z" tests="2" failures="0" errors="0" time="1.287">
+    <testcase name="Response code should be OK." time="1.287" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+    <testcase name="Response &quot;_value&quot; is null." time="1.287" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+  <testsuite name="Test Trello Request" id="c8cf80d5-3203-4a29-a7ab-9edd7cfa24be" timestamp="2024-03-28T11:08:53.109Z" tests="1" failures="0" errors="0" time="0.333">
+    <testcase name="Response code should be OK." time="0.333" classname="08ExerciseApiTestingWithPostmanTrelloApi"/>
+  </testsuite>
+</testsuites>
