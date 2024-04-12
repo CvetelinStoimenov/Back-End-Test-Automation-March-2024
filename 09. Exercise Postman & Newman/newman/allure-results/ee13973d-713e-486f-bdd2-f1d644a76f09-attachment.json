@@ -1,0 +1,10 @@
+{
+    "User-Agent": "PostmanRuntime/7.37.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "df962ee4-3612-4ad7-9f8a-f1160548d639",
+    "Host": "api.trello.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Cookie": "dsc=0317c03006b2737ee96862ee93dd4b95302d860c28f3610fcb365919b2de6fa1"
+}

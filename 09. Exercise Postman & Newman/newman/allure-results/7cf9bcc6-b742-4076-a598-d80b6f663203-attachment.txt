@@ -1,0 +1,3 @@
+pm.test('Response code should be OK.', () => {
+    pm.response.to.have.status(200);
+});

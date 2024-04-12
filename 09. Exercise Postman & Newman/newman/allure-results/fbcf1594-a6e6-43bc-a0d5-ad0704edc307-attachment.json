@@ -1,0 +1,12 @@
+{
+    "Content-Type": "application/json",
+    "User-Agent": "PostmanRuntime/7.37.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "4ad2085d-b3c1-40f7-a323-99fd04b694d9",
+    "Host": "api.trello.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "36",
+    "Cookie": "dsc=0317c03006b2737ee96862ee93dd4b95302d860c28f3610fcb365919b2de6fa1"
+}

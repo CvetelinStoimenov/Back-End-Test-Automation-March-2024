@@ -1,0 +1,1 @@
+{"id":"6618fd6cae90583a5f1fb5f0","name":"List-52321","closed":false,"color":null,"idBoard":"6618fd6790b7162a5a7074c7","pos":4096,"limits":{}}
