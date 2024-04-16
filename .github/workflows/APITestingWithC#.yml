@@ -11,7 +11,7 @@ on:
     branches: [ "master" ]
 defaults:
   run:
-    working-directory: ./12. Continuous Integration (CI)/02-House-Renting-System-App/
+    working-directory: ./04. API Testing with C#/
 
 jobs:
   build:
