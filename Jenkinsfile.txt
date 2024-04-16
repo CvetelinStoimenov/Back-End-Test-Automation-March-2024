@@ -1,20 +1,26 @@
 pipeline {
     agent any
-
     stages {
-
-        stage('Build and Test') {
-            steps {
-                script {
-                    // Navigate to the directory containing the solution file
+         stage('Restore') {
+              steps {
                     dir('12. Continuous Integration (CI)/02-House-Renting-System-App/') {
-                        // Execute necessary commands to build and test the solution
-                        sh 'dotnet restore HouseRentingSystem.sln'
-                        sh 'dotnet build HouseRentingSystem.sln'
-                        // Add additional commands as needed
+                        bat 'dotnet restore HouseRentingSystem.sln'
                     }
-                }
-            }
-        }
+              }
+          }
+          stage('Build') {
+              steps {
+                    dir('12. Continuous Integration (CI)/02-House-Renting-System-App/') {
+                        bat 'dotnet build HouseRentingSystem.sln --configuration Release'
+                    }
+              }
+          }
+          stage('Test') {
+              steps {
+                    dir('12. Continuous Integration (CI)/02-House-Renting-System-App/') {
+                        bat 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj'
+                    }
+              }
+          }
     }
 }
