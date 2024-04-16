@@ -1,0 +1,52 @@
+pipeline{
+  agent any
+
+  environment {
+    NODE_VERSION = '21.7.3'
+    SERVICE_ID = 'render-service-id'
+    RENDER_API_KEY = 'render-api-key'
+  }
+
+  tools {
+    nodejs "${NODE_VERSION}"
+  }
+
+  stages {
+         stage('Checkout') {
+              steps {
+                    dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
+                        checkout scm
+                    }
+              }
+          }
+
+         stage('Install dependencies') {
+              steps {
+                    dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
+                        bat 'npm instal'
+                        bat 'npm install -g wait-on kill-port'
+                    }
+              }
+          }
+
+         stage('Run tests') {
+              steps {
+                    dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
+                        bat 'start /b npm run start'
+                        bat 'wait-on http://localhost:8081'
+                        bat 'npm test'
+                        bat 'npm kill-port 8081'
+                    }
+                }
+            }
+		}
+		
+		post {
+			always {
+				echo 'CI Pipeline completed'
+			}
+			failure {
+				bat 'kill-port 8081'
+			}
+		}
+	}
