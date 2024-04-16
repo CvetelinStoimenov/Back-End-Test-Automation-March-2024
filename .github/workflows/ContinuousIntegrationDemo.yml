@@ -6,8 +6,14 @@ name: ContinuousIntegrationDemo
 on:
   push:
     branches: [ "master" ]
+    paths: ["12. Continuous Integration (CI)/01-Student-Registry-App/**"]
   pull_request:
     branches: [ "master" ]
+    paths: ["12. Continuous Integration (CI)/01-Student-Registry-App/**"]
+
+defaults:
+  run:
+    working-directory: ./12. Continuous Integration (CI)/01-Student-Registry-App/
 
 jobs:
   build:
