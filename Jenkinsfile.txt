@@ -1,7 +1,3 @@
-dir('/var/jenkins_home/workspace/SamplePipeline/scripts') {
-                    /* execute commands in the scripts directory */
-                }
-
 pipeline {
     agent any
     stages {
