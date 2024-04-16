@@ -19,19 +19,19 @@ jobs:
     - name: Checkout all of the repo code 
       uses: actions/checkout@v3
       with:
-        # This ensures that the checkout action is performed in the correct directory
         path: ./12. Continuous Integration (CI)/01-Student-Registry-App
+        ref: ${{ github.ref }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Install dependencies 
-      working-directory: ./12. Continuous Integration (CI)/01-Student-Registry-App
       run: npm ci
+      working-directory: ./12. Continuous Integration (CI)/01-Student-Registry-App
     - name: Build
-      working-directory: ./12. Continuous Integration (CI)/01-Student-Registry-App
       run: npm run build --if-present
-    - name: Run tests
       working-directory: ./12. Continuous Integration (CI)/01-Student-Registry-App
+    - name: Run tests
       run: npm test
+      working-directory: ./12. Continuous Integration (CI)/01-Student-Registry-App
