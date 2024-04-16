@@ -9,9 +9,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-defaults:
-  run:
-    working-directory: ./04. API Testing with C#/
+
 
 jobs:
   build:
