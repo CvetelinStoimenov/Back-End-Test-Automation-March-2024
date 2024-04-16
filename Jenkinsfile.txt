@@ -1,26 +1,24 @@
 pipeline {
     agent any
+
     stages {
-         stage('Restore') {
-              steps {
-                  dir('https://github.com/CvetelinStoimenov/Back-End-Test-Automation-March-2024/12. Continuous Integration (CI)/02-House-Renting-System-App') {
-                    bat 'dotnet restore HouseRentingSystem.sln'
-                  }
-              }
-          }
-          stage('Build') {
-              steps {
-                  dir('https://github.com/CvetelinStoimenov/Back-End-Test-Automation-March-2024/12. Continuous Integration (CI)/02-House-Renting-System-App') {
-                    bat 'dotnet build HouseRentingSystem.sln --configuration Release'
-                  }
-              }
-          }
-          stage('Test') {
-              steps {
-                  dir('https://github.com/CvetelinStoimenov/Back-End-Test-Automation-March-2024/12. Continuous Integration (CI)/02-House-Renting-System-App') {
-                    bat 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj'
-                  }
-              }
-          }
+        stage('Clone repository') {
+            steps {
+                git 'https://github.com/CvetelinStoimenov/Back-End-Test-Automation-March-2024.git'
+            }
+        }
+        stage('Build and Test') {
+            steps {
+                script {
+                    // Navigate to the directory containing the solution file
+                    dir('12. Continuous Integration (CI)/02-House-Renting-System-App/') {
+                        // Execute necessary commands to build and test the solution
+                        sh 'dotnet restore HouseRentingSystem.sln'
+                        sh 'dotnet build HouseRentingSystem.sln'
+                        // Add additional commands as needed
+                    }
+                }
+            }
+        }
     }
 }
