@@ -1,19 +1,29 @@
+dir('/var/jenkins_home/workspace/SamplePipeline/scripts') {
+                    /* execute commands in the scripts directory */
+                }
+
 pipeline {
     agent any
     stages {
          stage('Restore') {
               steps {
-                  bat 'dotnet restore HouseRentingSystem.sln'
+                  dir('/12. Continuous Integration (CI)/02-House-Renting-System-App') {
+                    bat 'dotnet restore HouseRentingSystem.sln'
+                  }
               }
           }
           stage('Build') {
               steps {
-                  bat 'dotnet build HouseRentingSystem.sln --configuration Release'
+                  dir('/12. Continuous Integration (CI)/02-House-Renting-System-App') {
+                    bat 'dotnet build HouseRentingSystem.sln --configuration Release'
+                  }
               }
           }
           stage('Test') {
               steps {
-                  bat 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj'
+                  dir('/12. Continuous Integration (CI)/02-House-Renting-System-App') {
+                    bat 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj'
+                  }
               }
           }
     }
