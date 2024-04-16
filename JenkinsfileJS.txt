@@ -1,52 +1,54 @@
-pipeline{
-  agent any
+pipeline {
+    agent any
 
-  environment {
-    NODE_VERSION = '21.7.3'
-    SERVICE_ID = 'render-service-id'
-    RENDER_API_KEY = 'render-api-key'
-  }
+    environment {
+        NODE_VERSION = '21.7.3'
+        SERVICE_ID = 'render-service-id'
+        RENDER_API_KEY = 'render-api-key'
+    }
 
-  tools {
-    nodejs "${NODE_VERSION}"
-  }
+    tools {
+        nodejs "${NODE_VERSION}"
+    }
 
-  stages {
-         stage('Checkout') {
-              steps {
-                    dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
-                        checkout scm
-                    }
-              }
-          }
-
-         stage('Install dependencies') {
-              steps {
-                    dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
-                        bat 'npm install'
-                        bat 'npm install -g wait-on kill-port'
-                    }
-              }
-          }
-
-         stage('Run tests') {
-              steps {
-                    dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
-                        bat 'start /b npm run start'
-                        bat 'wait-on http://localhost:8081'
-                        bat 'npm test'
-                        bat 'npm kill-port 8081'
-                    }
+    stages {
+        stage('Checkout') {
+            steps {
+                dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
+                    checkout scm
                 }
             }
-		}
-		
-		post {
-			always {
-				echo 'CI Pipeline completed'
-			}
-			failure {
-				bat 'kill-port 8081'
-			}
-		}
-	}
+        }
+
+        stage('Install dependencies') {
+            steps {
+                dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
+                    bat 'npm install'
+                    bat 'npm install -g wait-on'
+                    bat 'npm install -g kill-port'
+                }
+            }
+        }
+
+        stage('Run tests') {
+            steps {
+                dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
+                    bat 'start /b npm run start'
+                    bat 'wait-on http://localhost:8081'
+                    bat 'npm test'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'CI Pipeline completed'
+        }
+        failure {
+            dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
+                bat 'kill-port 8081'
+            }
+        }
+    }
+}
