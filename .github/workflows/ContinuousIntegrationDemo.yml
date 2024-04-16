@@ -16,7 +16,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./Back-End-Test-Automation-March-2024/12. Continuous Integration (CI)
+        working-directory: ./Back-End-Test-Automation-March-2024/12. Continuous Integration (CI)/01-Student-Registry-App
 
     strategy:
       matrix:
