@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+         stage('Restore') {
+              steps {
+                    dir('12. Continuous Integration (CI)/02-House-Renting-System-App/') {
+                        bat 'dotnet restore HouseRentingSystem.sln'
+                    }
+              }
+          }
+          stage('Build') {
+              steps {
+                    dir('12. Continuous Integration (CI)/02-House-Renting-System-App/') {
+                        bat 'dotnet build HouseRentingSystem.sln --configuration Release'
+                    }
+              }
+          }
+          stage('Test') {
+              steps {
+                    dir('12. Continuous Integration (CI)/02-House-Renting-System-App/') {
+                        bat 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj'
+                    }
+              }
+          }
+    }
+}
