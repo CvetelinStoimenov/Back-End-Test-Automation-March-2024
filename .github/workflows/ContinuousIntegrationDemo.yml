@@ -6,17 +6,19 @@ name: ContinuousIntegrationDemo
 on:
   push:
     branches: [ "master" ]
+    paths: ["12. Continuous Integration (CI)/01-Student-Registry-App/**"]
   pull_request:
     branches: [ "master" ]
+    paths: ["12. Continuous Integration (CI)/01-Student-Registry-App/**"]
+
+defaults:
+  run:
+    working-directory: ./12. Continuous Integration (CI)/01-Student-Registry-App/
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./12. Continuous Integration (CI)
 
     strategy:
       matrix:
@@ -26,13 +28,17 @@ jobs:
     steps:
     - name: Checkout all of the repo code 
       uses: actions/checkout@v3
+      with:
+        path: ./12. Continuous Integration (CI)/01-Student-Registry-App
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Instal dependencies 
+        cache-dependency-path: './12. Continuous Integration (CI)/01-Student-Registry-App/package-lock.json'
+    - name: Install dependencies 
       run: npm ci
-    - run: npm run build --if-present
+    - name: Build
+      run: npm run build --if-present
     - name: Run tests
       run: npm test
