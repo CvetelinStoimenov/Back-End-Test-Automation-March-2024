@@ -23,7 +23,7 @@ pipeline{
          stage('Install dependencies') {
               steps {
                     dir('12. Continuous Integration (CI)/01-Student-Registry-App/') {
-                        bat 'npm instal'
+                        bat 'npm install'
                         bat 'npm install -g wait-on kill-port'
                     }
               }
