@@ -13,10 +13,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: cd ./12. Continuous Integration (CI)/01-Student-Registry-App
 
     strategy:
       matrix:
@@ -31,6 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: '12. Continuous Integration (CI)/01-Student-Registry-App/package-lock.json'
     - name: Instal dependencies 
       run: npm ci
     - run: npm run build --if-present
