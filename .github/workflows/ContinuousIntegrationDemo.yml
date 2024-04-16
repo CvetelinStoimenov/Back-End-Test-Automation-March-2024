@@ -26,8 +26,6 @@ jobs:
     steps:
     - name: Checkout all of the repo code 
       uses: actions/checkout@v3
-      with:
-        path: ./12. Continuous Integration (CI)/01-Student-Registry-App
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
