@@ -6,11 +6,9 @@ name: ContinuousIntegrationDemo
 on:
   push:
     branches: [ "master" ]
-    paths: ["12. Continuous Integration (CI)/01-Student-Registry-App/**"]
   pull_request:
     branches: [ "master" ]
-    paths: ["12. Continuous Integration (CI)/01-Student-Registry-App/**"]
-
+    
 defaults:
   run:
     working-directory: ./12. Continuous Integration (CI)/01-Student-Registry-App/
@@ -22,14 +20,12 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x, 20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - name: Checkout all of the repo code 
       uses: actions/checkout@v3
-      with:
-        path: ./12. Continuous Integration (CI)/01-Student-Registry-App
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
