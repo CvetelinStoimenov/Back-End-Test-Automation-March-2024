@@ -16,7 +16,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./12. Continuous Integration (CI)
+        working-directory: /home/runner/work/Back-End-Test-Automation-March-2024/Back-End-Test-Automation-March-2024/12. Continuous Integration (CI)
 
     strategy:
       matrix:
