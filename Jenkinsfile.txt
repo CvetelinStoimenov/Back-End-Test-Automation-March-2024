@@ -2,11 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone repository') {
-            steps {
-                git 'https://github.com/CvetelinStoimenov/Back-End-Test-Automation-March-2024.git'
-            }
-        }
+
         stage('Build and Test') {
             steps {
                 script {
