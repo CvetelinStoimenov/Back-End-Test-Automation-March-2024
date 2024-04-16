@@ -9,7 +9,9 @@ on:
   pull_request:
     branches: [ "master" ]
     
-
+defaults:
+  run:
+    working-directory: ./12. Continuous Integration (CI)/01-Student-Registry-App/
 
 jobs:
   build:
