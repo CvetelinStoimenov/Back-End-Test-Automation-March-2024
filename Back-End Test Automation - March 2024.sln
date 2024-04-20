@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventmi.Core", "06. Exercis
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventmi.Infrastructure", "06. Exercise Integration Testing of Web API Controllers\Eventmi-AppSkeleton\Eventmi.Infrastructure\Eventmi.Infrastructure.csproj", "{D3A18CB9-05AE-4F62-9EDF-ACB0B6869237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventmi.Tests", "Eventmi.Tests\Eventmi.Tests.csproj", "{953DBE67-7603-40D6-B913-E81AD742668C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventmi.Tests", "Eventmi.Tests\Eventmi.Tests.csproj", "{953DBE67-7603-40D6-B913-E81AD742668C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeaAPITesting", "18. Exam Prep 1- Idea Center\IdeaAPITesting\IdeaAPITesting.csproj", "{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. Exam Prep 1- Idea Center", "18. Exam Prep 1- Idea Center", "{2C2E8696-F504-4514-8F3E-941684666795}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,10 @@ Global
 		{953DBE67-7603-40D6-B913-E81AD742668C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{953DBE67-7603-40D6-B913-E81AD742668C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{953DBE67-7603-40D6-B913-E81AD742668C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +91,7 @@ Global
 		{93CC7730-89F1-4797-935E-79CC962222BA} = {F8BA5711-5CAB-4032-8DF5-E11E428387E9}
 		{D3A18CB9-05AE-4F62-9EDF-ACB0B6869237} = {F8BA5711-5CAB-4032-8DF5-E11E428387E9}
 		{953DBE67-7603-40D6-B913-E81AD742668C} = {F8BA5711-5CAB-4032-8DF5-E11E428387E9}
+		{598DFCC6-AA62-4DDE-9F1C-016606C52BDC} = {2C2E8696-F504-4514-8F3E-941684666795}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5EF5C4C-2ED3-4B4B-A842-EAD1502E7F28}
