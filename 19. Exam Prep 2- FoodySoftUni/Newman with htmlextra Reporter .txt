@@ -1,0 +1,1 @@
+newman run "18. Exam Prep 1 Idea Center.postman_collection.json" -r htmlextra

@@ -27,9 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventmi.Infrastructure", "0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventmi.Tests", "Eventmi.Tests\Eventmi.Tests.csproj", "{953DBE67-7603-40D6-B913-E81AD742668C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeaAPITesting", "18. Exam Prep 1- Idea Center\IdeaAPITesting\IdeaAPITesting.csproj", "{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdeaAPITesting", "18. Exam Prep 1- Idea Center\IdeaAPITesting\IdeaAPITesting.csproj", "{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. Exam Prep 1- Idea Center", "18. Exam Prep 1- Idea Center", "{2C2E8696-F504-4514-8F3E-941684666795}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Exam Prep 2- FoodySoftUni", "19. Exam Prep 2- FoodySoftUni", "{46C5F52A-293C-4401-861F-7BBB95FF94BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodySoftUni", "19. Exam Prep 2- FoodySoftUni\FoodySoftUni\FoodySoftUni\FoodySoftUni.csproj", "{14FC7B8A-D8F3-47AD-ACF8-CC61DD120BC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,10 @@ Global
 		{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{598DFCC6-AA62-4DDE-9F1C-016606C52BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14FC7B8A-D8F3-47AD-ACF8-CC61DD120BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14FC7B8A-D8F3-47AD-ACF8-CC61DD120BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14FC7B8A-D8F3-47AD-ACF8-CC61DD120BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14FC7B8A-D8F3-47AD-ACF8-CC61DD120BC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +100,7 @@ Global
 		{D3A18CB9-05AE-4F62-9EDF-ACB0B6869237} = {F8BA5711-5CAB-4032-8DF5-E11E428387E9}
 		{953DBE67-7603-40D6-B913-E81AD742668C} = {F8BA5711-5CAB-4032-8DF5-E11E428387E9}
 		{598DFCC6-AA62-4DDE-9F1C-016606C52BDC} = {2C2E8696-F504-4514-8F3E-941684666795}
+		{14FC7B8A-D8F3-47AD-ACF8-CC61DD120BC0} = {46C5F52A-293C-4401-861F-7BBB95FF94BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5EF5C4C-2ED3-4B4B-A842-EAD1502E7F28}
