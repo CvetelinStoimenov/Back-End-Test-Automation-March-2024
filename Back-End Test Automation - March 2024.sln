@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Exam Prep 2- FoodySoftU
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodySoftUni", "19. Exam Prep 2- FoodySoftUni\FoodySoftUni\FoodySoftUni\FoodySoftUni.csproj", "{14FC7B8A-D8F3-47AD-ACF8-CC61DD120BC0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Regular Exam", "20. Regular Exam", "{3AEEA6A0-310B-4596-97F2-957A4EA0CDCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
